@@ -325,8 +325,8 @@ const questions = [
 }
 ];
 
-const somAcerto = new Audio('acerto.mp3');
-const somErro = new Audio('erro.mp3');
+const somAcerto = new Audio('acerto.mp3.mp3');
+const somErro = new Audio('erro.mp3.mp3');
 
 const startContainer = document.getElementById('start-container');
 const quizContainer = document.getElementById('quiz-container');
@@ -486,5 +486,6 @@ function showResults() {
 
     resultText.innerText = `${playerName}, você acertou ${score} de ${total} perguntas.\nErros: ${erros}`;
 }
+
 
 nextButton.addEventListener('click', nextQuestion);
