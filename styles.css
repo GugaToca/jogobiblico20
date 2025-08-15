@@ -1,0 +1,182 @@
+/* Importando fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    background: linear-gradient(135deg, #079c4a, #6d056d, #643eee);
+    background-size: 300% 300%;
+    animation: gradientBG 8s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Animação de fundo */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1, h2, p {
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+/* Containers */
+#start-container,
+#quiz-container,
+#result-container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Botões */
+.btn {
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+    color: #222;
+    border: none;
+    padding: 12px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.btn.correct {
+    background: linear-gradient(135deg, #28a745, #218838) !important;
+    color: white;
+}
+
+.btn.wrong {
+    background: linear-gradient(135deg, #dc3545, #b02a37) !important;
+    color: white;
+}
+
+/* Input de nome */
+.input {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Rodapé */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    padding: 8px 0;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Responsividade para tablets e celulares */
+@media (max-width: 768px) {
+    #start-container,
+    #quiz-container,
+    #result-container {
+        padding: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 20px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+#start-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+#start-container h1 {
+    margin-bottom: 15px;
+}
+
+#start-container p {
+    margin-bottom: 20px;
+}
+
+.hide {
+    display: none !important;
+    visibility: hidden;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column; /* força coluna */
+    gap: 10px; /* espaço entre botões */
+    width: 100%; /* ocupa toda a largura do container */
+}
+
+.btn-container .btn {
+    width: 100%;
+    text-align: center;
+}
+
+#phase-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+}
+
+#phase-message h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
