@@ -428,17 +428,17 @@ function selectAnswer(answer, question, selectedButton) {
             nextQuestion();
         }, 1000);
     } else {
-        somErro.play();
-        body.style.backgroundColor = 'red';
-        const correct = question.answers.find(a => a.correct).text;
-        setTimeout(() => {
-            body.style.backgroundColor = '';
-            showMessage(`Resposta errada! A correta é: ${correct}`, () => {
-                nextButton.classList.remove('hide');
-            });
-        }, 1000);
-    }
+    somErro.play();
+    body.style.backgroundColor = 'red';
+    const correct = question.answers.find(a => a.correct).text;
+    setTimeout(() => {
+        body.style.backgroundColor = '';
+        showMessage(`Resposta errada! A correta é: ${correct}`, () => {
+            nextQuestion(); // avança direto
+        });
+    }, 1000);
 }
+
 
 function nextQuestion() {
     currentQuestionIndex++;
@@ -489,3 +489,4 @@ function showResults() {
 
 
 nextButton.addEventListener('click', nextQuestion);
+
